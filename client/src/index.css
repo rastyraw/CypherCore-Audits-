@@ -43,9 +43,13 @@
   --chart-3: 225 60% 40%;
   --chart-4: 240 50% 45%;
   --chart-5: 195 80% 50%;
-  --font-sans: Open Sans, sans-serif;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: Menlo, monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+  --navy: 216 72% 14%;
+  --ice-blue: 195 100% 43%;
+  --silver: 220 8% 78%;
   --radius: .5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(210 15% 40% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(210 15% 40% / 0.00);
