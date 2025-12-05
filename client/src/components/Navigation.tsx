@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, Calendar } from "lucide-react";
 import logoImage from "@assets/CipherCore__logo_silver_(1)(1)_1764894486156.png";
+import ConsultationScheduler from "@/components/ConsultationScheduler";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -43,7 +44,15 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex lg:items-center lg:gap-2">
+          <ConsultationScheduler
+            trigger={
+              <Button variant="outline" className="gap-2" data-testid="button-schedule-header">
+                <Calendar className="h-4 w-4" />
+                Schedule Call
+              </Button>
+            }
+          />
           <Link href="/contact">
             <Button data-testid="button-request-audit-header">
               Request Audit
@@ -80,6 +89,14 @@ export default function Navigation() {
                   </Link>
                 ))}
               </nav>
+              <ConsultationScheduler
+                trigger={
+                  <Button variant="outline" className="w-full gap-2" data-testid="button-schedule-mobile">
+                    <Calendar className="h-4 w-4" />
+                    Schedule Call
+                  </Button>
+                }
+              />
               <Link href="/contact" onClick={() => setIsOpen(false)}>
                 <Button className="w-full" data-testid="button-request-audit-mobile">
                   Request Audit
