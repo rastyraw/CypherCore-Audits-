@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -29,17 +30,22 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // todo: remove mock functionality - replace with actual API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    console.log("Form submitted:", formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    toast({
-      title: "Message Sent",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      await apiRequest("POST", "/api/contact", formData);
+      setIsSubmitted(true);
+      toast({
+        title: "Message Sent",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
