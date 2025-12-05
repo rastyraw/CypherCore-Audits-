@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Shield, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logoImage from "@assets/CipherCore__logo_silver_(1)(1)_1764894486156.png";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -23,13 +24,9 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2" data-testid="link-footer-logo">
-              <Shield className="h-8 w-8 text-primary" />
-              <span className="font-heading text-xl font-bold">CipherCore</span>
+            <Link href="/" className="block" data-testid="link-footer-logo">
+              <img src={logoImage} alt="CipherCore Audits" className="h-12 w-auto" />
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Precision in Protection
-            </p>
             <p className="text-sm text-muted-foreground">
               Expert-led cybersecurity compliance auditing for modern enterprises.
             </p>

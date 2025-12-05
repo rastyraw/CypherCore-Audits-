@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoImage from "@assets/CipherCore__logo_silver_(1)(1)_1764894486156.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,10 +22,7 @@ export default function Navigation() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
-          <Shield className="h-8 w-8 text-primary" />
-          <span className="font-heading text-xl font-bold text-foreground">
-            CipherCore
-          </span>
+          <img src={logoImage} alt="CipherCore Audits" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex lg:items-center lg:gap-1" data-testid="nav-desktop">
@@ -63,10 +61,7 @@ export default function Navigation() {
           <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Shield className="h-6 w-6 text-primary" />
-                  <span className="font-heading text-lg font-bold">CipherCore</span>
-                </div>
+                <img src={logoImage} alt="CipherCore Audits" className="h-8 w-auto" />
               </div>
               <nav className="flex flex-col gap-2" data-testid="nav-mobile">
                 {navLinks.map((link) => (
