@@ -9,6 +9,7 @@ import ConsultationScheduler from "@/components/ConsultationScheduler";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
   { href: "/services", label: "Services" },
   { href: "/clients", label: "Clients & Industries" },
   { href: "/insights", label: "Insights" },

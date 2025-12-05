@@ -17,6 +17,7 @@ import ServiceISO27001 from "@/pages/service-iso27001";
 import ServiceHIPAA from "@/pages/service-hipaa";
 import ServiceNIST from "@/pages/service-nist";
 import ServiceCloud from "@/pages/service-cloud";
+import Team from "@/pages/team";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
       <Route path="/services" component={Services} />
       <Route path="/services/soc2" component={ServiceSOC2} />
       <Route path="/services/iso27001" component={ServiceISO27001} />
