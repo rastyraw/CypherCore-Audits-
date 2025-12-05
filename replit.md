@@ -27,12 +27,19 @@ The application implements a professional, security-focused design language with
 - Responsive grid layouts optimized for mobile, tablet, and desktop viewports
 
 **Page Structure:**
-- Home: Hero section with CTAs, feature highlights, statistics, and services overview
+- Home: Hero section with CTAs, feature highlights, animated statistics, services overview, client testimonials
 - About: Company vision, mission, and values
+- Team: Leadership team, senior consultants, and company values
 - Services: Grid of all audit services with individual detail pages for each service type
 - Clients & Industries: Target industry segments (Startups, Healthcare, Government, SMBs)
 - Insights: Blog-style content grid for thought leadership
 - Contact: Lead capture form with contact information
+
+**Interactive Features:**
+- Animated statistics counters (500+ audits, 200+ clients, 15+ certifications, 12+ years)
+- Consultation scheduler with date/time picker and booking form
+- Live chat widget with visitor info collection and auto-replies
+- Client testimonials carousel with 6 featured testimonials
 
 ### Backend Architecture
 
@@ -45,6 +52,8 @@ The application implements a professional, security-focused design language with
 - RESTful API endpoints under `/api` prefix
 - Contact form submission endpoint (`POST /api/contact`)
 - Contact messages retrieval endpoint (`GET /api/contact`)
+- Consultation booking endpoint (`POST /api/bookings`, `GET /api/bookings`)
+- Chat messaging endpoints (`POST /api/chat`, `GET /api/chat/:visitorId`)
 - Simple JSON-based request/response format
 
 **Storage Layer:**
@@ -56,6 +65,8 @@ The application currently uses an in-memory storage implementation (`MemStorage`
 **Data Models:**
 - Users: Basic authentication schema with username/password
 - Contact Messages: Form submissions with name, email, organization (optional), and message content
+- Bookings: Consultation scheduling with name, email, phone, company, service, date, time
+- Chat Messages: Visitor messages with visitorId, name, email, message content, and timestamps
 
 **Session Management:**
 Infrastructure is in place for session handling (connect-pg-simple dependency present) though not currently implemented in the core application logic.
