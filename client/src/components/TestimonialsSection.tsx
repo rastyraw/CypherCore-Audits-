@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
                     <p className="font-medium text-sm" data-testid={`text-testimonial-name-${testimonial.id}`}>
                       {testimonial.name}
                     </p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-muted-foreground" data-testid={`text-testimonial-role-${testimonial.id}`}>
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>

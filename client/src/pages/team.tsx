@@ -147,8 +147,13 @@ function TeamMemberCard({ member, featured = false }: { member: TeamMember; feat
         <div className="mt-4">
           <p className="text-xs font-medium text-muted-foreground mb-2">Specialties</p>
           <div className="flex flex-wrap gap-1">
-            {member.specialties.map((specialty) => (
-              <Badge key={specialty} variant="secondary" className="text-xs">
+            {member.specialties.map((specialty, idx) => (
+              <Badge 
+                key={specialty} 
+                variant="secondary" 
+                className="text-xs"
+                data-testid={`badge-specialty-${member.id}-${idx}`}
+              >
                 {specialty}
               </Badge>
             ))}
@@ -158,8 +163,13 @@ function TeamMemberCard({ member, featured = false }: { member: TeamMember; feat
         <div className="mt-3">
           <p className="text-xs font-medium text-muted-foreground mb-2">Certifications</p>
           <div className="flex flex-wrap gap-1">
-            {member.certifications.map((cert) => (
-              <Badge key={cert} variant="outline" className="text-xs">
+            {member.certifications.map((cert, idx) => (
+              <Badge 
+                key={cert} 
+                variant="outline" 
+                className="text-xs"
+                data-testid={`badge-cert-${member.id}-${idx}`}
+              >
                 {cert}
               </Badge>
             ))}
