@@ -88,7 +88,7 @@ export class MemStorage implements IStorage {
       id,
       name: insertMessage.name || null,
       email: insertMessage.email || null,
-      isFromVisitor: insertMessage.isFromVisitor || "true",
+      isFromVisitor: insertMessage.isFromVisitor ?? true,
       createdAt: new Date(),
     };
     this.chatMessages.set(id, message);
