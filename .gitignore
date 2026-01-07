@@ -6,3 +6,9 @@ vite.config.ts.*
 *.tar.gz
 .local
 .env
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.elasticbeanstalk/config.yml
